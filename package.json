@@ -1,11 +1,20 @@
 {
-  "name": "bluemix-microservice-sample",
+  "name": "basicbff",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "A generated Bluemix application",
+  "private": true,
+  "engines": {
+    "node": "^6.9.0"
   },
-  "author": "",
-  "license": "Apache-2.0"
+  "scripts": {
+    "start": "node server.js",
+    "debug": "node --nolazy --debug-brk=5858 server.js"
+  },
+  "dependencies": {
+    "appmetrics-dash": "^3.0.0",
+    "body-parser": "^1.17.0",
+    "express": "^4.14.0",
+    "express-session": "^1.15.0",
+    "health-check": "git+https://github.com/rfdickerson/healthcheck-proof-of-concept.git"
+  }
 }
