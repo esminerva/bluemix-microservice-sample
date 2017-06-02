@@ -16,6 +16,11 @@ app.use("/swagger/api", express.static("./public/swagger.yaml"));
 app.use("/explorer", express.static("./public/swagger-ui"));
 
 // Health Check
+healthChecker.onCheck( () => {
+	// do special checking
+	return Math.round(Math.random()) ? true : false;
+});
+
 app.use("/health", healthChecker.router);
 
 // Business logic
@@ -31,11 +36,6 @@ app.get("/products", function(req, res, next){
 	});
 	*/
 	res.json();
-});
-
-app.get("/killapp", function(req, res, next) {
-	res.send('killing app...');
-	process.exit(1);
 });
 
 app.post("/products", function(req, res, next){
